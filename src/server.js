@@ -1,19 +1,8 @@
-import express from 'express'
-import cors from "cors";
-
-const app = express();
-
-app.use(express.json());
-app.use(cors({
-  origin: "*"
-}));
+import app from "./app.js"
 
 
-app.get('/', (req, res) => {
-  console.log("GET /");
-  res.status(200).send("Hello World");
-});
+const port = process.env.PORT || 3000;
 
-app.listen('3333', () => {
-  console.log("O servidor foi inicializado em http://localhost:3333");
-});
+app.listen(port, () => {
+  console.log('Servidor escutando em http://localhost:3000')
+})
